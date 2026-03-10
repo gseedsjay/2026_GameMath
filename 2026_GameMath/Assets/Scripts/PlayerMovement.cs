@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class ClickToMove : MonoBehaviour
 {
-    public float moveSpeed = 5f; public float sprintMultiplier = 2f; // 전력질주 시 속도 배율
+    public float moveSpeed = 5f;
+    public float sprintMultiplier = 2f; // 전력질주 시 속도 배율
     private Vector2 mouseScreenPosition; 
     private Vector3 targetPosition;      
     private bool isMoving = false;
@@ -22,9 +23,8 @@ public class ClickToMove : MonoBehaviour
         if (value.isPressed && !isDashing)
         {
             isDashing = true;
-            dashTimer = dashDuration; // 타이머 장전
+            dashTimer = dashDuration; 
 
-            // 🔥 중요: 대시가 시작되면 기존의 '클릭 이동'은 해제합니다.
             isMoving = false;
 
             // 만약 캐릭터가 한 번도 움직이지 않았다면 정면으로 대시
