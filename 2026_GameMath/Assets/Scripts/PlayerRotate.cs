@@ -13,8 +13,7 @@ public class PlayerRotate : MonoBehaviour
 
     void Update()
     {
-        Quaternion rotation = Quaternion.Euler(0f,
-            moveInput.x * rotationSpeed * Time.deltaTime, 0f);
+        Quaternion rotation = Quaternion.Euler(0f, moveInput.x * rotationSpeed * Time.deltaTime, 0f);
         transform.rotation = rotation * transform.rotation;
     }
 }
