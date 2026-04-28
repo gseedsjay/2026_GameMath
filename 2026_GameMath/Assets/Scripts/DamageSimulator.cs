@@ -54,7 +54,8 @@ public class DamageSimulator : MonoBehaviour
 
     public void LevelUp()
     {
-        ResetData();
+        totalDamage = 0;
+        attackCount = 0;
         level++;
         baseDamage = level * 20f;
         logDisplay.text = string.Format("레벨업! 현재 레벨: {0}", level);
@@ -86,9 +87,9 @@ public class DamageSimulator : MonoBehaviour
         statusDisplay.text = string.Format("Level: {0} / 무기: {1}\n기본 데미지: {2} / 치명타: {3}% (x{4})",
             level, weaponName, baseDamage, critRate * 100, critMult);
 
-        rangeDisplay.text = string.Format("예상 일반 데미지 범위 (95%): [{0:F1} ~ {1:F1}]",
-            baseDamage - (2 * baseDamage * stdDevMult),
-            baseDamage + (2 * baseDamage * stdDevMult));
+        rangeDisplay.text = string.Format("예상 일반 데미지 범위 : [{0:F1} ~ {1:F1}]",
+            baseDamage - (3 * baseDamage * stdDevMult),
+            baseDamage + (3 * baseDamage * stdDevMult));
 
         float dpa = attackCount > 0 ? totalDamage / attackCount : 0;
         resultDisplay.text = string.Format("누적 데미지: {0:F1}\n공격 횟수: {1}\n평균 DPA: {2:F2}",
