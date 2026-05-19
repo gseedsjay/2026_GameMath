@@ -18,7 +18,7 @@ public class PredictionLineRender : MonoBehaviour
         originPos = transform.position;
         lr = GetComponent<LineRenderer>();
         lr.positionCount = 0;
-        lr.widthMultiplier = 0.05f;        
+        lr.widthMultiplier = 0.05f;
         lr.material = new Material(Shader.Find("Unlit/Color"))
         {
             color = Color.red
@@ -51,7 +51,6 @@ public class PredictionLineRender : MonoBehaviour
                 camSlerp.target = endPos; 
                 startPos = transform;
             }
-
         }
         else
         {
